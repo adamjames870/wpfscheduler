@@ -7,20 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
         
-<ItemsControl ItemsSource="{Binding RangePanels}">
-
-        <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        
-        <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                        <controls:RangePanelView />
-                </DataTemplate>
-        </ItemsControl.ItemTemplate>
-                
-</ItemsControl>
+<DockPanel>
+        <controls:ActivityGridView DataContext="{Binding ActivityGridViewModel}" />
+</DockPanel>
         
 </Window>

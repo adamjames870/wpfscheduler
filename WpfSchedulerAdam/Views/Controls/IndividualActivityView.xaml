@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Border 
-        Height="50" BorderBrush="DodgerBlue" Background="LightBlue" Margin="3">
+        BorderBrush="DodgerBlue" Background="LightBlue" Margin="3">
         <StackPanel>
             <TextBlock FontWeight="Bold" Text="{Binding Title}" />
         </StackPanel>

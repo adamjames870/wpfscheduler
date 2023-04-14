@@ -59,7 +59,7 @@ public class MakeSampleData
             Title = "Shop Opening 1",
             Date = DateOnly.FromDateTime(DateTime.Today),
             StartTime = new TimeOnly(10, 0, 0),
-            EndTime = new TimeOnly(18, 0, 0),
+            EndTime = new TimeOnly(22, 0, 0),
             LocationId = 3,
         };
         _activityDay1SpaOpening = new ActivityModel()
@@ -94,8 +94,8 @@ public class MakeSampleData
             ActivityId = 7,
             Title = "Shop Opening 2",
             Date = DateOnly.FromDateTime(DateTime.Today.AddDays(1)),
-            StartTime = new TimeOnly(10, 0, 0),
-            EndTime = new TimeOnly(18, 0, 0),
+            StartTime = new TimeOnly(18, 0, 0),
+            EndTime = new TimeOnly(23, 0, 0),
             LocationId = 3,
         };
         _activityDay2SpaOpening = new ActivityModel()
@@ -131,7 +131,7 @@ public class MakeSampleData
             Title = "Shop Opening 3",
             Date = DateOnly.FromDateTime(DateTime.Today.AddDays(2)),
             StartTime = new TimeOnly(10, 0, 0),
-            EndTime = new TimeOnly(18, 0, 0),
+            EndTime = new TimeOnly(22, 0, 0),
             LocationId = 3,
         };
         _activityDay3SpaOpening = new ActivityModel()

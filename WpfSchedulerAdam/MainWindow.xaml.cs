@@ -12,12 +12,7 @@ namespace WpfSchedulerAdam
     {
         public MainWindow()
         {
-            var dataFactory = new DataFactory();
-            var activities = dataFactory.GetActivities();
-            var startDate = DateOnly.FromDateTime(DateTime.Now);
-            var mainWindowViewModel = new MainWindowViewModel(startDate, activities);
-            
-            DataContext = mainWindowViewModel;
+            DataContext = new MainWindowViewModel();
             InitializeComponent();
         }
     }
