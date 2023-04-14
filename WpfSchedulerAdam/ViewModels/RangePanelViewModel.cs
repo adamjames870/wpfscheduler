@@ -23,7 +23,7 @@ public class RangePanelViewModel : BaseViewModel
     }
     
     public ObservableCollection<IndividualActivityViewModel> Activities => _activities;
-    public DateOnly PanelDate => _rangePanelModel.Date;
+    public string PanelDate => _rangePanelModel.Date.ToString("dd-MMM");
     public string PanelLocation => _rangePanelModel.Location;
     public int RowCount => _rangePanelModel.RowsDisplay.HoursToDisplay * _rangePanelModel.RowsDisplay.RowsPerHour;
     public int ColumnIndex => _rangePanelModel.SortIndex;    

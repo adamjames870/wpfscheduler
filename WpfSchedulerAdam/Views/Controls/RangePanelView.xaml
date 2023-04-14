@@ -7,6 +7,9 @@
              xmlns:helpers="clr-namespace:WpfSchedulerAdam.Views.Helpers"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
+<DockPanel>
+    <TextBlock DockPanel.Dock="Top" Text="{Binding PanelDate}" TextAlignment="Center"/>
+    <TextBlock DockPanel.Dock="Top" Text="{Binding PanelLocation}" TextAlignment="Center"/>
     <ItemsControl ItemsSource="{Binding Activities}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
@@ -25,5 +28,5 @@
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>
-
+</DockPanel>
 </UserControl>
