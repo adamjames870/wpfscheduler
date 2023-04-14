@@ -2,43 +2,35 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using WpfSchedulerAdam.Data;
+using WpfSchedulerAdam.Models;
 
 namespace WpfSchedulerAdam.ViewModels;
 
 public class ActivityGridViewModel : BaseViewModel
 {
     
-    private readonly DateOnly _startDate;
+    
     private readonly IEnumerable<ActivityModel> _allActivities;
     private readonly ObservableCollection<RangePanelViewModel> _rangePanelViewModels;
-    private readonly CalendarDisplayModel _calendarDisplayModel;
-
-    private readonly int _datesToDisplay = 3;
-    private readonly int _locationsToDisplay = 4;
-
-    public ActivityGridViewModel(DateOnly startDate, IEnumerable<ActivityModel> activities)
+    private readonly GridDisplayConfiguration _gridDisplayConfiguration;
+    
+    public ActivityGridViewModel(GridDisplayConfiguration gridDisplayConfiguration, IEnumerable<ActivityModel> activities)
     {
-        _startDate = startDate;
+        _gridDisplayConfiguration = gridDisplayConfiguration;
         _allActivities = activities;
-        
-        _calendarDisplayModel = new CalendarDisplayModel()
-        {
-            HoursToDisplay = 16,
-            StartHour = 8,
-            RowsPerHour = 1,
-        };
         
         _rangePanelViewModels = new ObservableCollection<RangePanelViewModel>();
 
         var activityModels = _allActivities.ToList();
         var dates = activityModels
-            .Where(act => act.Date >= _startDate)
+            .Where(act => act.Date >= _gridDisplayConfiguration.StartDate)
             .GroupBy(act => act.Date)
             .Select(date => date.First())
             .OrderBy(act => act.Date)
             .Select(act => act.Date)
-            .Take(_datesToDisplay)
+            .Take(_gridDisplayConfiguration.ColsDisplay.DatesToDisplay)
             .ToList();
 
         var locations = activityModels
@@ -46,7 +38,7 @@ public class ActivityGridViewModel : BaseViewModel
             .Select(location => location.First())
             .OrderBy(act => act.LocationId)
             .Select(act => act.LocationId)
-            .Take(_locationsToDisplay)
+            .Take(_gridDisplayConfiguration.ColsDisplay.LocationsToDisplay)
             .ToList();
 
         int i = 0;
@@ -59,7 +51,7 @@ public class ActivityGridViewModel : BaseViewModel
                 var rangePanelModel = new RangePanelModel()
                 {
                     SortIndex = i,
-                    CalendarDisplay = _calendarDisplayModel,
+                    RowsDisplay = _gridDisplayConfiguration.RowsDisplay,
                     Date = date,
                     Location = loc.ToString(),
                 };
@@ -76,8 +68,8 @@ public class ActivityGridViewModel : BaseViewModel
         }
         
     }
-    
+
     public ObservableCollection<RangePanelViewModel> RangePanels => _rangePanelViewModels;
-    public int ColumnsToDisplay => _datesToDisplay * _locationsToDisplay;
+    public int ColumnsToDisplay => _gridDisplayConfiguration.ColsDisplay.ColsToDisplay();
 
 }

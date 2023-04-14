@@ -1,9 +1,11 @@
-﻿namespace WpfSchedulerAdam.Data;
+﻿using System;
+
+namespace WpfSchedulerAdam.Models;
 
 public class RangePanelModel
 {
     public int SortIndex { get; set; }
-    public CalendarDisplayModel CalendarDisplay { get; set; }
+    public RowsDisplayConfiguration RowsDisplay { get; set; }
     public DateOnly Date { get; set; }
     public string Location { get; set; }
     

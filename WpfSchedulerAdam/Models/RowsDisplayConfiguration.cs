@@ -1,6 +1,6 @@
-﻿namespace WpfSchedulerAdam.Data;
+﻿namespace WpfSchedulerAdam.Models;
 
-public class CalendarDisplayModel
+public class RowsDisplayConfiguration
 {
     public int HoursToDisplay { get; set; }
     public int RowsPerHour { get; set; }

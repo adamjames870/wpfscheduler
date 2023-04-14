@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using WpfSchedulerAdam.Data;
+using WpfSchedulerAdam.Models;
 
 namespace WpfSchedulerAdam.ViewModels;
 
@@ -24,7 +25,7 @@ public class RangePanelViewModel : BaseViewModel
     public ObservableCollection<IndividualActivityViewModel> Activities => _activities;
     public DateOnly PanelDate => _rangePanelModel.Date;
     public string PanelLocation => _rangePanelModel.Location;
-    public int RowCount => _rangePanelModel.CalendarDisplay.HoursToDisplay * _rangePanelModel.CalendarDisplay.RowsPerHour;
+    public int RowCount => _rangePanelModel.RowsDisplay.HoursToDisplay * _rangePanelModel.RowsDisplay.RowsPerHour;
     public int ColumnIndex => _rangePanelModel.SortIndex;    
     
 }
