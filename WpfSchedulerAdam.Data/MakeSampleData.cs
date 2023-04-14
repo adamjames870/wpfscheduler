@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections;
+using System.Collections.ObjectModel;
 using TimeOnly = System.TimeOnly;
 
 namespace WpfSchedulerAdam.Data;
@@ -27,7 +28,7 @@ public class MakeSampleData
         AddActivityModels();
     }
 
-    public ObservableCollection<ActivityModel> GetActivityModelCollection()
+    public IEnumerable<ActivityModel> GetActivityModelCollection()
     {
         return _activityModels;
     }

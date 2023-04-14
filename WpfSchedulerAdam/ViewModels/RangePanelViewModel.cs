@@ -7,20 +7,24 @@ namespace WpfSchedulerAdam.ViewModels;
 public class RangePanelViewModel : BaseViewModel
 {
     private readonly ObservableCollection<ActivityViewModel> _activities;
-    private DateOnly _panelDate { get; }
+    private readonly DateOnly _panelDate;
+    private string _panelLocation;
     
-    public RangePanelViewModel(ObservableCollection<ActivityModel> activities, DateOnly panelDate)
+    public RangePanelViewModel(DateOnly panelDate, string panelLocation, 
+        ObservableCollection<ActivityModel> activities)
     {
         _panelDate = panelDate;
+        _panelLocation = panelLocation;
+        
         _activities = new ObservableCollection<ActivityViewModel>();
         foreach (var activity in activities)
         {
-            if (activity.Date == _panelDate)  
-                _activities.Add(new ActivityViewModel(activity));
+            _activities.Add(new ActivityViewModel(activity));
         }
     }
     
     public ObservableCollection<ActivityViewModel> Activities => _activities;
     public DateOnly PanelDate => _panelDate;
+    public string PanelLocation => _panelLocation;
     
 }

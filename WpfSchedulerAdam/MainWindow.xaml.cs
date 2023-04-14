@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfSchedulerAdam.Data;
 using WpfSchedulerAdam.ViewModels;
 
@@ -25,7 +13,10 @@ namespace WpfSchedulerAdam
         public MainWindow()
         {
             var dataFactory = new DataFactory();
-            var mainWindowViewModel = new MainWindowViewModel(dataFactory.GetActivities());
+            var activities = dataFactory.GetActivities();
+            var startDate = DateOnly.FromDateTime(DateTime.Now);
+            var mainWindowViewModel = new MainWindowViewModel(startDate, activities);
+            
             DataContext = mainWindowViewModel;
             InitializeComponent();
         }

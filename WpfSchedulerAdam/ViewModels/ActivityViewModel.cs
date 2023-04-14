@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using WpfSchedulerAdam.Data;
 
 namespace WpfSchedulerAdam.ViewModels;
@@ -29,7 +30,10 @@ public class ActivityViewModel : BaseViewModel
     public TimeOnly StartTime => _activityModel.StartTime;
     public TimeOnly EndTime => _activityModel.EndTime;
 
+    public TimeSpan Duration => EndTime - StartTime;
+    
     public int RowIndex => StartTime.Hour - 8;
+    public int RowSpan => Duration.Hours;
     
     public override string ToString()
     {

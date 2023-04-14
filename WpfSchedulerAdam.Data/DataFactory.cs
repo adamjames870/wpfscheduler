@@ -12,7 +12,7 @@ public class DataFactory
         _makeSampleData = new MakeSampleData();
     }
     
-    public ObservableCollection<ActivityModel> GetActivities()
+    public IEnumerable<ActivityModel> GetActivities()
     {
         return _makeSampleData.GetActivityModelCollection();
     }

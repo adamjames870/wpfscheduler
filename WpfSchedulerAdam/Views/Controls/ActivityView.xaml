@@ -7,14 +7,9 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Border 
-        Width="450" Height="50" BorderBrush="DodgerBlue" Background="LightBlue" Margin="3">
+        Height="50" BorderBrush="DodgerBlue" Background="LightBlue" Margin="3">
         <StackPanel>
             <TextBlock FontWeight="Bold" Text="{Binding Title}" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Date, StringFormat='Date: {0:dd-MMM-yy} | '}" />
-                <TextBlock Text="{Binding StartTime, StringFormat='Start: {0:HHmm} | '}" />
-                <TextBlock Text="{Binding EndTime, StringFormat='End: {0:HHmm}'}" />
-            </StackPanel>
         </StackPanel>
     </Border>
 </UserControl>
