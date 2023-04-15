@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSchedulerAdam", "WpfSchedulerAdam\WpfSchedulerAdam.csproj", "{F9AE7606-D55E-44EB-ABAA-C99F790D7D2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler.UI", "WpfScheduler.UI\WpfScheduler.UI.csproj", "{F9AE7606-D55E-44EB-ABAA-C99F790D7D2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSchedulerAdam.Data", "WpfSchedulerAdam.Data\WpfSchedulerAdam.Data.csproj", "{E5842966-EE91-4FD6-8AE8-FA7EE7B6C9FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfScheduler.Data", "WpfScheduler.Data\WpfScheduler.Data.csproj", "{E5842966-EE91-4FD6-8AE8-FA7EE7B6C9FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

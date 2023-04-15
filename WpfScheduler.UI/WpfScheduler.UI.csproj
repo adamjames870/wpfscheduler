@@ -5,10 +5,11 @@
         <TargetFramework>net7.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWPF>true</UseWPF>
+        <RootNamespace>WpfSchedulerAdam</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\WpfSchedulerAdam.Data\WpfSchedulerAdam.Data.csproj" />
+      <ProjectReference Include="..\WpfScheduler.Data\WpfScheduler.Data.csproj" />
     </ItemGroup>
 
     <ItemGroup>
