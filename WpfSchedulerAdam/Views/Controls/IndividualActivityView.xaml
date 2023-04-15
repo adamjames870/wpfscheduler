@@ -7,9 +7,10 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Border 
-        BorderBrush="DodgerBlue" Background="LightBlue" Margin="3">
+        BorderBrush="DodgerBlue" BorderThickness="2" 
+        Background="LightBlue" Margin="3" CornerRadius="3">
         <StackPanel>
-            <TextBlock FontWeight="Bold" Text="{Binding Title}" />
+            <TextBlock Margin="3, 0, 0, 0" FontWeight="Bold" Text="{Binding Title}" />
         </StackPanel>
     </Border>
 </UserControl>

@@ -32,7 +32,7 @@ public class MainWindowViewModel : BaseViewModel
         
         var colsDisplayConfiguration = new ColsDisplayConfiguration()
         {
-            DatesToDisplay = 3,
+            DatesToDisplay = 2,
             LocationsToDisplay = 4,
         };
         
