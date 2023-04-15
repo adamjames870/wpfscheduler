@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 using WpfSchedulerAdam.Data;
 using WpfSchedulerAdam.Models;
+using WpfSchedulerAdam.Views.Controls;
 
 namespace WpfSchedulerAdam.ViewModels;
 
 public class IndividualActivityViewModel : BaseViewModel
 {
+
+    public ICommand MouseUpCommand { get; private set; }
     
     private readonly RangePanelModel _rangePanelModel;
     private readonly ActivityModel _activityModel;
@@ -15,9 +20,21 @@ public class IndividualActivityViewModel : BaseViewModel
     {
         _activityModel = activityModel;
         _rangePanelModel = rangePanelModel;
+        
+        MouseUpCommand = new RelayCommand<MouseButtonEventArgs>(MouseUpEvent);
+        
+        
     }
-    
-    public int ActivityId => _activityModel.ActivityId;
+
+    private void MouseUpEvent(MouseButtonEventArgs? args)
+    {
+        if (args == null) return;
+        var activityView = (IndividualActivityView)args.Source;
+        var activity = (IndividualActivityViewModel)activityView.DataContext; 
+        MessageBox.Show($"MouseUpEvent: {activity.Title}");
+    }
+
+    public int ctivityId => _activityModel.ActivityId;
     
     public string Title
     {

@@ -24,7 +24,7 @@
         </ItemsControl.ItemContainerStyle>
         <ItemsControl.ItemTemplate>
             <DataTemplate>
-                <controls:ActivityView />
+                <controls:IndividualActivityView />
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>

@@ -2,9 +2,9 @@
 
 namespace WpfSchedulerAdam.Views.Controls;
 
-public partial class ActivityView : UserControl
+public partial class IndividualActivityView : UserControl
 {
-    public ActivityView()
+    public IndividualActivityView()
     {
         InitializeComponent();
     }
